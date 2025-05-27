@@ -1,27 +1,48 @@
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <noscript></noscript>
 
 </head>
 <body>
 	<div class="text-center">
-		<h2>This is a web page</h2>
+		<h2>Geocache 0111</h2>
 		<p>
-			This is the description.
+			Good luck!
 		</p>
 		<br>
 	</div>
 
-	<div class="form-group">
-		<button type="button" class="btn btn-primary col-sm-offset-2" alt="Email" onclick="validate_ada_form('adaform');">Email</button>
-		<button type="reset" class="btn btn-info" alt="Reset" onclick="clear_validation_messages();">Reset</button>
-		<button type="button" class="btn btn-danger" alt="Cancel" onclick="javascript:window.close();">Cancel</button>
-	</div>
+	<div class="col d-flex justify-content-center">
+		<div class="card text-center" style="width: 25rem;">
+			<div class="card-header">
+				Remaining guesses: <guesscnt>
+			</div>
+			<div class="card-body">
+				<h5 class="card-title">Guess a number between 1 and 100</h5>
+				<p class="card-text">Guess my number in 6 or less tries and you will be rewarded with the final coordinates</p>
+				<form method="post">
+					<div class="form-group">
+						<input required type="text" class="form-control" name="guess" id="guess" aria-describedby="emailHelp" placeholder="Enter your guess">
+						<input type="hidden" class="form-control" name="answer" id="answer" value="<answer>">
+						<input type="hidden" class="form-control" name="numtry" id="numtry" value="<numtry>">
+					</div>
+					<button <disabled> type="submit" class="btn btn-primary">Submit</button>
 
-	<div id="success-message" style="display: none">
-		<center><h3>Message Sent!</h3></center>
-	</div>
+				</form>
+			</div>
+			<div class="card-footer text-body-secondary">
+				<status>
+					<form method="get">
+						<button type="submit" class="btn btn-info">Reset</button></a>
+					</form>
+			</div>
+		</div>
+
+		<div id="success-message" style="display: none">
+			<center><h3>Message Sent!</h3></center>
+		</div>
+		</div>
 </body>
 </html>

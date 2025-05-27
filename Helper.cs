@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using GeoCaching;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using System;
 using System.IO;
@@ -14,7 +15,7 @@ namespace ExLibrisFunctions
             "index.html" : Environment.GetEnvironmentVariable("DEFAULT_PAGE");
 
         public static string GetScriptPath()
-            => Path.Combine(GetEnvironmentVariable("HOME"), @"");
+            => Path.Combine(GetEnvironmentVariable("HOME_PATH"), @"");
             //=> Path.Combine(GetEnvironmentVariable("HOME"), @"site\wwwroot");
 
         public static string GetEnvironmentVariable(string name)
@@ -28,7 +29,8 @@ namespace ExLibrisFunctions
                 Path.GetFullPath(Path.Combine(GetScriptPath(), staticFilesFolder, functionName));
             var fullPath = Path.GetFullPath(Path.Combine(staticFilesPath, path));
 
-            if (!IsInDirectory(staticFilesPath, fullPath))
+
+			if (!IsInDirectory(staticFilesPath, fullPath))
             {
                 throw new ArgumentException("Invalid path");
             }
